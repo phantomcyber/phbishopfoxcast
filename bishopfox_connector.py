@@ -45,8 +45,6 @@ class RetVal(tuple):
 
 class BishopFoxConnector(BaseConnector):
 
-    _auth_token_url = "https://bishopfox.auth0.com/oauth/token"
-
     def __init__(self):
 
         # Call the BaseConnectors init first
@@ -565,9 +563,10 @@ class BishopFoxConnector(BaseConnector):
         optional_config_name = config.get("optional_config_name")
         """
 
-        base_url = config["base_url"].strip("/")
+        self._api_base_url = config["api_base_url"]
+        self._auth_token_url = config["auth_token_url"]
 
-        self._base_url = "{0}/orgs/{1}".format(base_url, config["org_id"])
+        self._base_url = "{0}/orgs/{1}".format(self._api_base_url, config["org_id"])
 
         ret_val, auth_token = self._get_auth_token()
 

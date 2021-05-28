@@ -18,8 +18,8 @@
     "min_phantom_version": "4.9.39220",
     "app_wizard_version": "1.0.0",
     "configuration": {
-        "base_url": {
-            "description": "Base URL",
+        "api_base_url": {
+            "description": "API Base URL",
             "data_type": "string",
             "required": true,
             "default": "https://api.portal.bishopfox.com/v1",
@@ -32,23 +32,30 @@
             "default": true,
             "order": 1
         },
+        "auth_token_url": {
+            "description": "Auth Token URL",
+            "data_type": "string",
+            "required": true,
+            "default": "https://bishopfox.auth0.com/oauth/token",
+            "order": 2
+        },
         "org_id": {
             "description": "Organization ID",
             "data_type": "string",
             "required": true,
-            "order": 2
+            "order": 3
         },
         "api_key": {
             "description": "API Key (client id)",
             "data_type": "password",
             "required": true,
-            "order": 3
+            "order": 4
         },
         "api_secret": {
             "description": "API Secret (client secret)",
             "data_type": "password",
             "required": true,
-            "order": 4
+            "order": 5
         }
     },
     "actions": [
